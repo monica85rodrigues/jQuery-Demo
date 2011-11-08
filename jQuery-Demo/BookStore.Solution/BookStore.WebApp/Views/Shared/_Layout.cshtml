@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>@ViewBag.Title</title>
+    <link rel="shortcut icon" href="/Content/images/books.ico" type="image/x-icon" />
+
+    <!-- **************** Style Sheets ********************************************************************-->
+    <link href="/Content/styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/styles/BookStoreStyle.css" rel="stylesheet" type="text/css" />
+    <link href="/Content/themes/blue/jquery-ui-1.8.16.custom.css" rel="stylesheet" type="text/css" />
+    
+    <!-- **************** Javascripts *********************************************************************-->
+    <script type="text/javascript" src="../../Scripts/jquery-1.6.2.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery-ui-1.8.16.custom.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/modernizr-1.7.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/jquery.tmpl.min.js"></script>
+    <script type="text/javascript" src="../../Scripts/highcharts.js"></script>
+    <script type="text/javascript" src="../../Scripts/exporting.js"></script>
+</head>
+<body>
+    <div class="page">
+        <header>
+            <div id="title">
+                <h1>BookStore</h1>
+            </div>
+            <div id="logindisplay">
+               @Html.Partial("_LogOnPartial")
+            </div>
+            <nav>
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Books V1", "BooksV1", "Books")</li>
+                    <li>@Html.ActionLink("Books V2 - JQuery UI", "BooksV2", "Books")</li>
+                    <li>@Html.ActionLink("Templating JQuery", "Index", "Templating")</li>
+                    <li>@Html.ActionLink("Charts JQuery", "Index", "Charting")</li>
+                </ul>
+            </nav>
+        </header>
+        <section id="main">
+            @RenderBody()
+        </section>
+        <footer>
+        </footer>
+    </div>
+</body>
+</html>

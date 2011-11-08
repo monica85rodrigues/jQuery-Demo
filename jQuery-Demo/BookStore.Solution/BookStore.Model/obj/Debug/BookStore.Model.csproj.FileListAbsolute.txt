@@ -1,0 +1,10 @@
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\BookStore.Solution\BookStore.Model\bin\Debug\BookStore.Model.dll
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\BookStore.Solution\BookStore.Model\bin\Debug\BookStore.Model.pdb
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\BookStore.Solution\BookStore.Model\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\BookStore.Solution\BookStore.Model\obj\Debug\BookStore.Model.dll
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\BookStore.Solution\BookStore.Model\obj\Debug\BookStore.Model.pdb
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\Demo\Solved\BookStore.Solution\BookStore.Model\bin\Debug\BookStore.Model.dll
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\Demo\Solved\BookStore.Solution\BookStore.Model\bin\Debug\BookStore.Model.pdb
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\Demo\Solved\BookStore.Solution\BookStore.Model\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\Demo\Solved\BookStore.Solution\BookStore.Model\obj\Debug\BookStore.Model.dll
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\Demo\Solved\BookStore.Solution\BookStore.Model\obj\Debug\BookStore.Model.pdb

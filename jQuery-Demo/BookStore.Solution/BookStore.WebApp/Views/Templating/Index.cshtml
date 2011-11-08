@@ -1,0 +1,56 @@
+﻿@{
+    ViewBag.Title = "Templating jQuery";
+}
+
+<h2>Templating jQuery - (Versions: Local Data and Remote Data)</h2>
+<style>
+    .markup-book{
+    	border: 1px solid red;
+    }
+</style>
+<h3>EXERCÍCIO 6 - Mostrar a informação (em lista) dos livros - (Local Data)</h3>
+<!-- (Local data) Aqui vão ser colocados os livros -->
+<ul id="booksList-localData"></ul>
+
+<h3>EXERCÍCIO 7 - Mostrar a informação (em lista) dos livros - (Remote Data)</h3>
+<!-- (Remote Data) Aqui vão ser colocados os livros -->
+<div id="booksList-remoteData"></div>
+
+<script type="text/javascript">
+    $(function () {
+
+        /*
+        EXERCÍCIO 6: local data
+        -------------------------------------------------------------------------------
+        */
+
+        //1º Passo: Criar o array com dados
+        var books = [
+              { Title: "jquery in action", Price: 30 },
+              { Title: "html5", Price: 35 },
+              { Title: "Pro Asp.net mvc 3", Price: 25 }
+        ];
+
+        //2º Passo: Criar o template
+        var markup = "<li><b>${Title}</b> (${Price})</li>";
+
+        //3º Passo: renderizar o template com os livros e inserir
+        //o html no conteudo do div com id=booksList-localData
+        $.tmpl(markup, books).appendTo("#booksList-localData");
+
+        /*
+        EXERCÍCIO 7: remote data
+        -------------------------------------------------------------------------------
+        */
+        var markupBook = "<div class='markup-book'>" + 
+                             "<strong>Title: </strong>${Title}</br>" +
+                             "<strong>Price: </strong>${Price}</br>" +
+                             "<strong>Author: </strong>${Author}</br>" +
+                             "<strong>Description: </strong>${Description}</br>" + 
+                         "</div></br>";
+
+        $.getJSON("/Templating/GetAllBooks", function (booksList) {
+            $.tmpl(markupBook, booksList).appendTo("#booksList-remoteData");
+        });
+    });
+</script>

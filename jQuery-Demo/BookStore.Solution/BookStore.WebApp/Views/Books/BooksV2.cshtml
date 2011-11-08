@@ -1,0 +1,130 @@
+﻿@using BookStore.Model.Entities
+@model IEnumerable<Book>
+
+@{
+    ViewBag.Title = "BooksList JQueryUI";
+}
+
+<h2>JQuery UI</h2>
+<h3>EXERCÍCIO 5: Vamos começar a melhorar o aspecto disto, com o mínimo código possível</h3>
+
+<input id="bookAddBtn" type="button" value="Add Book"/>
+
+<div id="dialog-form-addBook" title="Create Book">
+<form id="book-form">
+    <fieldset>
+        <table>
+            <tr>
+                <th>Title:</th>
+                <td><input type="text" name="Title"/></td>
+            </tr>
+            <tr>
+                <th>Price:</th>
+                <td><input type="text" name="Price"/></td>
+            </tr>
+            <tr>
+                <th>Author:</th>
+                <td><input type="text" name="Author"/></td>
+            </tr>
+            <tr>
+                <th>Description:</th>
+                <td><input type="text" name="Description"/></td>
+            </tr>
+        </table>
+    </fieldset>
+</form>
+</div>
+
+<div id="booksList">
+    @Html.Partial("BooksList", Model)
+</div>
+
+<!-- Dialog Box Confirm - Nota: Coloquem o display a none porque senão vai estar à vista mesmo sem ter sido -->
+<div id="dialog-confirm" title="Eliminar Items" style="display: none">
+	<p>
+        <span class="ui-icon ui-icon-alert" style="float:left; margin:0 7px 20px 0;"></span>
+        Este item vai ser apagado permanentemente e não pode ser recuperado.
+        Tem a certeza que o pretende eliminar?
+    </p>
+</div>
+
+<script type="text/javascript">
+
+    $(function () {
+        // $("#dialog:ui-dialog").dialog("destroy");
+        //vamos alterar o aspecto dos botões
+        $("input[type=button]").button();
+
+        function removeBook(id) {
+            $.post("/Books/Remove", "bookId=" + id, function (htmlResult) {
+                $("#booksList").html(htmlResult);
+            });
+        }
+
+        function createBook() {
+            var url = "/Books/Create";
+            var data = $("#book-form").serialize();
+            $.post(url, data, function (htmlResult) {
+                $("#booksList").html(htmlResult);
+            });
+        }
+
+        function clearForm() {
+            $("#book-form input").attr("value", "");
+        }
+
+        $(".trash").live("click", null, function () {
+            var id = $(this).attr("name");
+            /*
+            Dialog Confirm - Delete items
+            ---------------------------------------------------------------
+            */
+            $("#dialog-confirm").dialog({
+                resizable: false,
+                height: 220,
+                width: 500,
+                modal: true, //poder ou não mover a janela
+                buttons: {
+                    "Apagar item": function () {
+                        removeBook(id);
+                        $("#dialog-confirm").dialog("close");
+                    },
+                    Cancel: function () {
+                        $(this).dialog("close");
+                    }
+                }
+            });
+        });
+
+        /*
+        Dialog Forms
+        */
+        $("#bookAddBtn")
+            .button()
+            .click(function () { //registo do evento de clique sobre o botão
+                $("#dialog-form-addBook").dialog("open"); // open dialog form
+            });
+
+        $("#dialog-form-addBook").dialog({
+            autoOpen: false,
+            height: 300,
+            width: 410,
+            show: "puff",
+            hide: "explode",
+            modal: true,
+            buttons: {
+                "Create book": function () {
+                    createBook();
+                    $("#dialog-form-addBook").dialog("close");
+                },
+                "Limpar": function () {
+                    clearForm();
+                },
+                Cancel: function () {
+                    $("#dialog-form-addBook").dialog("close");
+                }
+            }
+        });
+    });
+
+</script>

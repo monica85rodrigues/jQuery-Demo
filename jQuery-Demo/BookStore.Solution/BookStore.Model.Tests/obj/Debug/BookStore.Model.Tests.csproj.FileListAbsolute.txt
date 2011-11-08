@@ -1,0 +1,14 @@
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\BookStore.Solution\BookStore.Model.Tests\bin\Debug\BookStore.Model.Tests.dll
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\BookStore.Solution\BookStore.Model.Tests\bin\Debug\BookStore.Model.Tests.pdb
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\BookStore.Solution\BookStore.Model.Tests\bin\Debug\BookStore.Model.dll
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\BookStore.Solution\BookStore.Model.Tests\bin\Debug\BookStore.Model.pdb
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\BookStore.Solution\BookStore.Model.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\BookStore.Solution\BookStore.Model.Tests\obj\Debug\BookStore.Model.Tests.dll
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\BookStore.Solution\BookStore.Model.Tests\obj\Debug\BookStore.Model.Tests.pdb
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\Demo\Solved\BookStore.Solution\BookStore.Model.Tests\bin\Debug\BookStore.Model.Tests.dll
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\Demo\Solved\BookStore.Solution\BookStore.Model.Tests\bin\Debug\BookStore.Model.Tests.pdb
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\Demo\Solved\BookStore.Solution\BookStore.Model.Tests\bin\Debug\BookStore.Model.dll
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\Demo\Solved\BookStore.Solution\BookStore.Model.Tests\bin\Debug\BookStore.Model.pdb
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\Demo\Solved\BookStore.Solution\BookStore.Model.Tests\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\Demo\Solved\BookStore.Solution\BookStore.Model.Tests\obj\Debug\BookStore.Model.Tests.dll
+C:\Users\monica.rodrigues.CLEARIS\Desktop\Apresentação JQuery .NET Juniors Academy\Demo\Solved\BookStore.Solution\BookStore.Model.Tests\obj\Debug\BookStore.Model.Tests.pdb

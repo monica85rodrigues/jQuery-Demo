@@ -1,0 +1,80 @@
+﻿@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Charts with jQuery</h2>
+
+<h4>
+    EXERCíCIO 8: Criar um PieChart com indicação das percentagens de livros com:<br/>
+        <ul>
+            <li>preço < 20€</li>
+            <li>preço entre 20€ e 40€</li>
+            <li>preço > 40€</li>
+        </ul>    
+</h4>
+
+<div id="container" style="width: 800px; height: 400px; margin: 0 auto"></div>
+
+<script type="text/javascript">
+    var chart;
+
+    function getPercentages() {
+        $.get("/Charting/GetPercentages", function (result) {
+            for (var i = 0; i < result.length; ++i) {
+                var a = [result[i].Name, result[i].Value];
+                chart.series[0].addPoint(a);
+            }
+        });
+    };
+
+    $(document).ready(function () {
+        chart = new Highcharts.Chart({
+            chart: {
+                renderTo: 'container',
+                plotBackgroundColor: null,
+                plotBorderWidth: null,
+                plotShadow: false,
+                events: {
+                    load: getPercentages
+                }
+            },
+            title: {
+                text: 'Percentagens de livros'
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.point.name + '</b>: ' + this.percentage.toFixed(2) + ' %';
+                }
+            },
+            plotOptions: {
+                pie: {
+                    allowPointSelect: true,
+                    cursor: 'pointer',
+                    dataLabels: {
+                        enabled: true,
+                        color: '#000000',
+                        connectorColor: '#000000',
+                        formatter: function () {
+                            return "<strong>" + this.point.name + "</strong>: " + this.percentage.toFixed(2) + " %";
+                        }
+                    },
+                    point: {
+                        events: {
+                            click: function () {
+                                alert("Nome: " + this.name + "\nNº Livros:" + this.y + "\nPercentagem:" 
+                                    + this.percentage.toFixed(2) + " %");
+                            }
+                        }
+                    },
+                    showInLegend: true
+                }
+            },
+            series: [{
+                type: 'pie',
+                name: 'Books Count',
+                data: []
+            }]
+        });
+
+    });
+</script>

@@ -1,0 +1,7 @@
+﻿
+table .row:hover{ background-color: #CCFFFF;}
+#bookForm {padding: 3px;display: none; /*display:none faz com que não se veja o formulário inicialmente*/}
+#booksTable td{border:solid 1px black;}
+#booksTable th{background-color: rgba(0,0,255,0.1);}
+fieldset legend{border: 1px solid powderblue; background-color:powderblue;padding: 5px; border-radius: 4px; }
+#bookForm fieldset {background-color:#CCFFFF;border-radius: 4px; }

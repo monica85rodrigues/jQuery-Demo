@@ -1,0 +1,79 @@
+﻿@using BookStore.Model.Entities
+@model IEnumerable<Book>
+
+@{
+    ViewBag.Title = "BooksList JQuery";
+}
+
+
+<h2>Effects and Ajax with jQuery</h2>
+<h3>EXERCÍCIO 4: Adicionar e eliminar livros.</h3>
+
+<input id="bookAddBtn" type="button" value="Add Book"/>
+
+<form id="bookForm" style="position: absolute; z-index: 50;">
+    <fieldset>
+        <table>
+            <tr>
+                <th>Title:</th>
+                <td><input type="text" name="Title"/></td>
+            </tr>
+            <tr>
+                <th>Price:</th>
+                <td><input type="text" name="Price"/></td>
+            </tr>
+            <tr>
+                <th>Author:</th>
+                <td><input type="text" name="Author"/></td>
+            </tr>
+            <tr>
+                <th>Description:</th>
+                <td><input type="text" name="Description"/></td>
+            </tr>
+        </table>
+        <input type="button" value="Create Book"/>
+    </fieldset>
+</form>
+<div id="booksList">
+    @Html.Partial("BooksList", Model)
+</div>
+<script type="text/javascript">
+
+    $(function () {
+
+        //vamos aprender a usar Ajax em JQuery e dizer "adeus" ao XmlHttpRequest (Atenção: Não deixou de ser usado!)
+        //EXERCÍCIO: Adicionar um livro.
+        //Animações:
+        //Fazer aparecer o formulário de preenchimento
+        $("#bookAddBtn").click(function () {
+            $("#bookForm").slideToggle("slow");
+        });
+
+        //Efectuar submit do preenchimento
+        $("#bookForm input[type=button]").click(function () {
+            var url = "/Books/Create";
+            var data = $("#bookForm").serialize();
+
+            $("#bookForm").slideUp("slow");
+            $.post(url, data, function (htmlResult) {
+                //vai ser retornado html
+                $("#booksList").html(htmlResult);
+            });
+        });
+
+		//isto não foi mostrado durante a apresentação !!!!
+        //Se usarem isto desta forma só a primeira linha é que "recebe" o evento
+        //         .click(function () {
+        //forma correcta é:
+        $(".trash").live("click", null, function () {
+        //$(".trash").click(function () {
+            var id = $(this).attr("name");
+            if (confirm("Tem a certeza que pretende eliminar este livro?")) {
+                $.post("/Books/Remove", "bookId=" + id, function (htmlResult) {
+                    //vai ser retornado html
+                    $("#booksList").html(htmlResult);
+                });
+            }
+        });
+    });
+</script>

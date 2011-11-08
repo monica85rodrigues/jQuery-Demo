@@ -1,0 +1,130 @@
+﻿@{
+    ViewBag.Title = "JQuery Base";
+}
+
+<h2>Jquery Base</h2>
+
+<style>
+    #content{ border:1px solid red; padding: 10px;}
+    .redText{color:red}
+    .blueText{color:blue;}
+</style>
+
+<h3>EXERCíCIO 1: (Atributos css,addClass, ...) - Atribuir a classe denominada "redText" aos parágrafos seguintes</h3>
+<div id="content">
+    <p>Olá meu querido público</p>
+    <p>Hoje vamos aprender Jquery</p>
+</div>
+<h3>EXERCíCIO 2: (Manipulação e mais atributos) - Adicionar html ao elemento div com id=content2</h3>
+<div id="content2"></div>
+<h3>EXERCíCIO 3: (Eventos) - Pintar os parágrafos consoante a cor premida</h3>
+<button name="blue">Blue</button>
+<button name="red">Red</button>
+
+<script type="text/javascript">
+/*
+EXERCíCIO 1: (CSS, Selectores, função $ ou jQuery)
+Atribuir a class redText aos parágrafos - Com e sem jQuery
+*/ 
+//   Sem JQuery - Atribuir a class redText aos paragrafos
+//    window.onload = function () {
+//        var pargs = document.getElementsByTagName("p");
+//        for (var i = 0; i < pargs.length; ++i) {
+//            pargs[i].className = "redText";
+//        }
+//   };
+
+    //Com JQuery - Atribuir a class redText aos paragrafos
+    
+    //1ª forma de garantir o carregamento da página
+    $(document).ready(function () { /* code here */ });
+
+    //2ª forma de garantir o carregamento da página - esta é a minha eleita :-)
+    $(function () { /* code here */ });
+    
+    //voltando ao exercício:
+    $(function () {
+        /*  
+        Selectores e Função $( .. )
+        --------------------------------------------------------
+        Fazer isto: $(..) ou jQuery(...) é a mesma coisa! Isto são funções JQuery
+        $( <selectores> ) a sintaxe dos selectores é a mesma que a dos CSS - portanto quem sabe css 
+        também sabe minimamente jquery :-)
+        */
+
+        //        //Resolução do exercício:
+        //        $("p").addClass("redText");
+
+        //vamos brincar:
+        //1ª VERSÃO:
+        //        $("p").addClass("redText");
+        //        $("p").css("text-decoration", "underline");
+
+        //2ª VERSÃO - como $("p").addClass("redText") retorna um objecto jQuery podemos fazer o seguinte:
+        //A isto chama-se "Encadeamento de Chamadas"
+        //        $("p").addClass("redText").css("text-decoration", "underline");
+
+        //mais brincadeiras:
+        //        $("p:last").removeClass("redText").addClass("blueText").append(" :-)");
+
+        //A função jQuery pode receber um elemento DOM assim:
+        //        var content = document.getElementById("content");
+        //        $(content).css("background-color", "yellow");
+
+        //ou então fazemos isto :)
+        //        $("#content").css("background-color", "yellow");
+
+        /*
+        EXERCíCIO 2: (Html e Manipulação)
+        Adicionar html ao elemento div com id=content2
+        -------------------------------------
+        */
+        //Manipulação
+        //        $("<p>Qual o melhor clube de Portugal?</p><h1 class='redText'>SLB</h1>").appendTo("#content");
+
+        //HTML
+        //vamos inserir html no content2
+        //        $("#content2").html("<h3>SLB Glorioso :)</h3>");
+
+        /*
+        EXERCíCIO 3: (Eventos)
+        Pintar os parágrafos de azul ou vermelho consoante o botão premido
+        -------------------------------------
+        */
+
+        //1ª VERSÃO - simplista - Registo de evento de click
+        //        $("button[name=blue]").click(blueClick);
+        //        $("button[name=red]").click(redClick);
+
+        //        function blueClick() {
+        //            $("p").removeClass().addClass("blueText");  
+        //        }
+
+        //        function redClick() {
+        //            $("p").removeClass().addClass("redText");
+        //        }
+
+        //2ª VERSÃO - funções anónimas
+        //        $("button[name=blue]").click(function () {
+        //            $("p").removeClass().addClass("blueText");
+        //        });
+        //        $("button[name=red]").click(function () {
+        //            $("p").removeClass().addClass("redText");
+        //        });
+
+        //3ª VERSÃO - keyword this
+        //        $("button").click(function () {
+        //            var name = $(this).attr("name");
+        //            if (name == "red")
+        //                $("p").removeClass().addClass("redText");
+        //            else 
+        //                $("p").removeClass().addClass("blueText");
+
+        //        });
+    });
+    
+    
+</script>
+
+
+

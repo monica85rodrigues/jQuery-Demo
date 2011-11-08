@@ -1,0 +1,22 @@
+﻿@using BookStore.Model.Entities
+@model IEnumerable<Book>
+
+<table id="booksTable">
+    <tr>
+        <th>Title</th>
+        <th>Price</th>
+        <th>Author</th>
+        <th>Description</th>
+        <th>Actions</th>
+    </tr>
+    @foreach(Book b in Model)
+    {
+        <tr class="row">
+            <td>@b.Title</td>
+            <td>@b.Price €</td>
+            <td>@b.Author</td>
+            <td>@b.Description</td>
+            <td><img class="trash" name="@b.Id" src="../../Content/images/trash-icon.png" style="cursor: pointer" title="Delete"/></td>
+        </tr>
+    }
+</table>
