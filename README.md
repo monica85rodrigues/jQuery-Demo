@@ -14,3 +14,5 @@ http://prezi.com/t-a-qchx3kbf/jquery-presentation/
 * Future Colors API JQuery 1.6: 	http://futurecolors.ru/_static/jquery.cheatsheet.16.pdf
 * jqGrid:							http://trirand.com/blog/jqgrid/jqgrid.html
 * Charts:							http://www.highcharts.com/
+
+
