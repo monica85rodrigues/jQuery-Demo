@@ -1,4 +1,4 @@
-## Apresentação sobre jQuery Realizada na Novabase pela .Dev4Starters
+## Apresentação sobre jQuery Realizada na Novabase pela .Dev4Starters (2011)
 http://prezi.com/t-a-qchx3kbf/jquery-presentation/
 
 ## Linqs úteis sobre o assunto:
